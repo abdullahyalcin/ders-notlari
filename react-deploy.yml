@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: react-deploy
+  name: react-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-deploy
+  template:
+    metadata:
+      labels:
+        app: react-deploy
+    spec:
+      containers:
+        - image: yasindevops06/react-image
+          name: react
+          ports:
+          - containerPort: 3000
+          env:
+          - name: "REACT_APP_BASE_URL"
+            value: "http://127.0.0.1:53296/" # For minikube, write nodejs service URL
+          resources: {}
