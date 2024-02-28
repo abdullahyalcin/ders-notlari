@@ -6,10 +6,10 @@ metadata:
   name: react-svc
 spec:
   ports:
-  - port: 3000
+  - port: 3000 
     protocol: TCP
     targetPort: 3000
-    nodePort: 30001
+    nodePort: 30001 #attention
   selector:
     app: react-deploy
   type: NodePort
